@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Study — Upload Notes</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="spine">
+      <div class="spine-brand">Smart Study<span>Notes to mastery</span></div>
+      <a class="spine-step active" href="index.html"><span class="n">1</span> Upload</a>
+      <a class="spine-step" href="index.html"><span class="n">2</span> Summary</a>
+      <a class="spine-step" id="navQuiz" href="#"><span class="n">3</span> Quiz</a>
+      <a class="spine-step" id="navDashboard" href="#"><span class="n">4</span> Dashboard</a>
+    </nav>
+
+    <main class="content">
+      <h1>Upload your notes</h1>
+      <p>Drop in a PDF of your class notes or textbook chapter. We'll turn it into short study notes, then quiz you on it to find what needs more work.</p>
+
+      <div class="card" id="uploadCard">
+        <div class="dropzone" id="dropzone">
+          <div class="icon">📄</div>
+          <p style="margin-bottom: 14px;">Drag a PDF here, or choose a file</p>
+          <input type="file" id="fileInput" accept="application/pdf" class="hidden" />
+          <button class="btn" id="chooseFileBtn" type="button">Choose PDF</button>
+          <p id="fileName" style="margin-top:12px; font-size:0.85rem;"></p>
+        </div>
+        <div id="uploadStatus" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="card hidden" id="summaryCard">
+        <h2>Study notes</h2>
+        <div class="summary-text" id="summaryText"></div>
+        <div style="margin-top:20px; display:flex; gap:12px;">
+          <a class="btn" id="goQuizBtn" href="#">Take a quiz on this →</a>
+          <button class="btn secondary" id="uploadAnotherBtn" type="button">Upload another PDF</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/upload.js"></script>
+</body>
+</html>

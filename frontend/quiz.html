@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Study — Quiz</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="spine">
+      <div class="spine-brand">Smart Study<span>Notes to mastery</span></div>
+      <a class="spine-step" href="index.html"><span class="n">1</span> Upload</a>
+      <a class="spine-step" href="index.html"><span class="n">2</span> Summary</a>
+      <a class="spine-step active" href="#"><span class="n">3</span> Quiz</a>
+      <a class="spine-step" id="navDashboard" href="#"><span class="n">4</span> Dashboard</a>
+    </nav>
+
+    <main class="content">
+      <h1>Quick quiz</h1>
+      <p>Answer honestly — this is how we find out what to study next, not a score to worry about.</p>
+
+      <div id="loadingState" class="card">
+        <p>Generating questions from your notes…</p>
+      </div>
+
+      <form id="quizForm" class="card hidden">
+        <div class="quiz-progress" id="quizProgress"></div>
+        <div id="questionsContainer"></div>
+        <button class="btn" type="submit" id="submitQuizBtn">Submit answers</button>
+      </form>
+
+      <div id="resultsCard" class="card hidden">
+        <h2>Results</h2>
+        <p id="scoreText"></p>
+        <div id="feedbackList"></div>
+        <div style="margin-top:20px; display:flex; gap:12px;">
+          <a class="btn" id="goDashboardBtn" href="#">See weak topics & study plan →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>

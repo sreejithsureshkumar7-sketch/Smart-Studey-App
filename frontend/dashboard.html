@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Study — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="spine">
+      <div class="spine-brand">Smart Study<span>Notes to mastery</span></div>
+      <a class="spine-step" href="index.html"><span class="n">1</span> Upload</a>
+      <a class="spine-step" href="index.html"><span class="n">2</span> Summary</a>
+      <a class="spine-step" id="navQuiz" href="#"><span class="n">3</span> Quiz</a>
+      <a class="spine-step active" href="#"><span class="n">4</span> Dashboard</a>
+    </nav>
+
+    <main class="content">
+      <h1 id="docTitle">Your progress</h1>
+      <p>How you're doing across every topic in this document, and a plan to close the gaps.</p>
+
+      <div id="emptyState" class="card hidden">
+        <div class="empty-state">
+          <p>No quiz attempts yet for this document. Take a quiz first to see your topic breakdown.</p>
+          <a class="btn" id="goTakeQuiz" href="#">Take a quiz</a>
+        </div>
+      </div>
+
+      <div id="dashboardContent" class="hidden">
+        <div class="stat-row">
+          <div class="stat-tile">
+            <div class="value" id="overallAccuracy">—</div>
+            <div class="label">Overall accuracy</div>
+          </div>
+          <div class="stat-tile">
+            <div class="value" id="quizzesTaken">—</div>
+            <div class="label">Quizzes taken</div>
+          </div>
+          <div class="stat-tile">
+            <div class="value" id="weakCount">—</div>
+            <div class="label">Weak topics</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Topic breakdown</h2>
+          <div id="topicBars"></div>
+        </div>
+
+        <div class="card">
+          <h2>Score over time</h2>
+          <canvas id="historyChart"></canvas>
+        </div>
+
+        <div class="card">
+          <h2>Study plan</h2>
+          <p>Tell us your exam date and we'll build a day-by-day plan focused on your weak topics first.</p>
+          <div style="display:flex; gap:10px; align-items:center; margin-bottom:18px;">
+            <input type="date" id="examDateInput" />
+            <button class="btn" id="generatePlanBtn" type="button">Generate plan</button>
+          </div>
+          <div id="planOutput"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
